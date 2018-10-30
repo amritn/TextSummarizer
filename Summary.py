@@ -4,7 +4,7 @@ from nltk.stem.snowball import SnowballStemmer
 
 import docx
 
-
+#get text of a .docx document
 def getText(filename):
     doc = docx.Document(filename)
     fullText = []
@@ -12,8 +12,8 @@ def getText(filename):
         fullText.append(para.text)
     return '\n'.join(fullText)
 
-
-text = getText("C:\\Users\\nidhi\\Downloads\\LOR_AmritNidhi_WordFormat.docx")
+#give the path for the .docx file (text to be summarized)
+text = getText("C:\\Desktop\\Text.docx")
 
 stemmer = SnowballStemmer("english")
 stopWords = set(stopwords.words("english"))
